@@ -22,12 +22,27 @@ namespace NZ {
 		file.close();
 	}
 
+	void readFromFile()
+	{
+		std::string fileContent;
+		std::fstream openFile("MyFile.txt");
+		while (std::getline(openFile, fileContent))
+		{
+			std::cout << "FileContent: " << fileContent << "\n";
+		}
+		openFile.close();
+
+	}
+
 }
 int main()
 {
 	NZ::print(122);
 	NZ::print("lol");
 	NZ::print('s');
+
+	NZ::WriteToFile("MyFile.txt");
+	NZ::readFromFile();
 
 
 }
